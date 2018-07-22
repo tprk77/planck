@@ -100,9 +100,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * RAISE LAYER:
    *
    * ,-----------------------------------------------------------------------------------.
-   * | Tab  |  \   |  -   |  <   |  >   |  `   |  ?   |  [   |  ]   |  :   |  ;   | Bksp |
+   * | Tab  |  \   |  =   |  <   |  >   |  `   |  ?   |  [   |  ]   |  :   |  ;   | Bksp |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * | Ctrl |  !   |  =   |  (   |  )   |  "   |  '   |  {   |  }   |  _   |  #   | XXXX |
+   * | Ctrl |  !   |  -   |  (   |  )   |  "   |  '   |  {   |  }   |  _   |  #   | XXXX |
    * |------+------+------+------+------+------|------+------+------+------+------+------|
    * | Shift|  $   |  @   |  /   |  *   |  +   |  ~   |  &   |  |   |  ^   |  %   | Enter|
    * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -110,8 +110,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------------------------------'
    */
   [LR_RSE] = KEYMAP_MIT(
-      KC_TAB,  KC_BSLS, KC_MINS, KC_LABK, KC_RABK, KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, KC_COLN, KC_SCLN, KC_BSPC,
-      KC_LCTL, KC_EXLM, KC_EQL,  KC_LPRN, KC_RPRN, KC_DQT,  KC_QUOT, KC_LCBR, KC_RCBR, KC_UNDS, KC_HASH, XXXXXXX,
+      KC_TAB,  KC_BSLS, KC_EQL,  KC_LABK, KC_RABK, KC_GRV,  KC_QUES, KC_LBRC, KC_RBRC, KC_COLN, KC_SCLN, KC_BSPC,
+      KC_LCTL, KC_EXLM, KC_MINS, KC_LPRN, KC_RPRN, KC_DQT,  KC_QUOT, KC_LCBR, KC_RCBR, KC_UNDS, KC_HASH, XXXXXXX,
       KC_LSFT, KC_DLR,  KC_AT,   KC_SLSH, KC_ASTR, KC_PLUS, KC_TILD, KC_AMPR, KC_PIPE, KC_CIRC, KC_PERC, KC_ENT,
       KC_ESC,  XXXXXXX, KC_LGUI, KC_LALT, MO_LWR,      KC_SPC,       MO_RSE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   ),
