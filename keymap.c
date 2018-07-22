@@ -172,6 +172,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   return true;
 }
 
+uint32_t layer_state_set_user(uint32_t state) {
+  return update_tri_layer_state(state, LR_LWR, LR_RSE, LR_NAV);
+}
+
 void matrix_init_user(void)
 {
   /* Do nothing */
