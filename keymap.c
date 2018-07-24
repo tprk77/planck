@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------------------------------------.
    * | Tab  | C-?  | M-S-o| M-o  | M-x  | C-g  | PgUp | Home |  Up  | End  | XXXX | Bksp |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * | Ctrl | C-l  | M-w  | C-w  | C-y  | Del  | PgDn | Left | Down | Right| XXXX | XXXX |
+   * | Ctrl | C-l  | C-w  | M-w  | C-y  | Del  | PgDn | Left | Down | Right| XXXX | XXXX |
    * |------+------+------+------+------+------|------+------+------+------+------+------|
    * | Shift| C-/  | C-r  | C-s  | C-x b| C-x k| C-k  | XXXX | XXXX | XXXX | XXXX | Enter|
    * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [LR_NAV] = KEYMAP_MIT(
       KC_TAB,  MD_CQUE, MD_MSO,  MD_MO,   MD_MX,   MD_CG,   KC_PGUP, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_BSPC,
-      KC_LCTL, MD_CL,   MD_MW,   MD_CW,   MD_CY,   KC_DEL,  KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
+      KC_LCTL, MD_CL,   MD_CW,   MD_MW,   MD_CY,   KC_DEL,  KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
       KC_LSFT, MD_CSLS, MD_CR,   MD_CS,   MC_CXB,  MC_CXK,  MD_CK,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
       KC_ESC,  XXXXXXX, KC_LGUI, KC_LALT, MO_LWR,      KC_SPC,       MO_RSE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
   )
