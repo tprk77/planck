@@ -37,8 +37,6 @@ enum tprk77_mod_keys {
   MD_CK   = LCTL(KC_K),
   MD_CQUE = LCTL(KC_QUES),
   MD_CSLS = LCTL(KC_SLSH),
-  MD_MO   = LALT(KC_O),
-  MD_MSO  = LALT(LSFT(KC_O))
 };
 
 #define SR SAFE_RANGE
@@ -46,6 +44,8 @@ enum tprk77_mod_keys {
 enum tprk77_keys {
   MC_0P0 = SR,  /* 0.0 */
   MC_PI,        /* 3.14159265358979323846 (As defined in "math.h") */
+  MC_CXO,       /* C-x o   (Next window) */
+  MC_CXCO,      /* C-x C-o (Previous window) */
   MC_CXCF,      /* C-x C-f (Open file) */
   MC_CXCS,      /* C-x C-s (Save file) */
   MC_CXB,       /* C-x b   (Switch buffer) */
@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * NAV LAYER:
    *
    * ,-----------------------------------------------------------------------------------.
-   * | Tab  | C-?  | M-S-o| M-o  | M-x  | C-g  | PgUp | Home |  Up  | End  | XXXX | Bksp |
+   * | Tab  | C-?  |C-xC-o| C-x o| M-x  | C-g  | PgUp | Home |  Up  | End  | XXXX | Bksp |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
    * | Ctrl | C-l  | C-w  | M-w  | C-y  | Del  | PgDn | Left | Down | Right| XXXX | XXXX |
    * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -130,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------------------------------'
    */
   [LR_NAV] = KEYMAP_MIT(
-      KC_TAB,  MD_CQUE, MD_MSO,  MD_MO,   MD_MX,   MD_CG,   KC_PGUP, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_BSPC,
+      KC_TAB,  MD_CQUE, MC_CXCO, MC_CXO,  MD_MX,   MD_CG,   KC_PGUP, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_BSPC,
       KC_LCTL, MD_CL,   MD_CW,   MD_MW,   MD_CY,   KC_DEL,  KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
       KC_LSFT, MD_CSLS, MD_CR,   MD_CS,   MC_CXB,  MC_CXK,  MD_CK,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
       KC_ESC,  XXXXXXX, KC_LGUI, KC_LALT, MO_LWR,      KC_SPC,       MO_RSE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
@@ -151,6 +151,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         return false;
       case MC_PI:
         SEND_STRING("3.14159265358979323846");
+        return false;
+      case MC_CXO:
+        SEND_STRING(SS_LCTRL("x") "o");
+        return false;
+      case MC_CXCO:
+        SEND_STRING(SS_LCTRL("xo"));
         return false;
       case MC_CXCF:
         SEND_STRING(SS_LCTRL("xf"));
